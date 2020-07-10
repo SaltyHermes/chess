@@ -9,6 +9,8 @@ public class ConditionWatcher {
     private boolean isStale;
     private boolean enPassant;
     private int enPassantCoord;
+    private boolean hasWhiteKingMoved;
+    private boolean hasBlackKingMoved;
 
 
     ConditionWatcher() {

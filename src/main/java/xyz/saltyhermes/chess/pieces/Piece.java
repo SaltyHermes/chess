@@ -2,7 +2,7 @@ package xyz.saltyhermes.chess.pieces;
 
 public abstract class Piece {
 
-
+    private static char pieceType;
     private int coord;
     private char color;
     public char pieceVisual;
