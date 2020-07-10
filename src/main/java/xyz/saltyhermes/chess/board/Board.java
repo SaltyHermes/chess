@@ -23,7 +23,7 @@ public class Board {
 
     }
 
-    public void spawnPiece(int coord, byte type) {
+    public void spawnPiece(char color, int coord, char type) {
         
         gameBoard.get(coord).spawnPiece(piece);
     }

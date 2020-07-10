@@ -1,18 +1,19 @@
 package xyz.saltyhermes.chess.pieces;
 
 public abstract class Piece {
+
     private enum Color {
         WHITE,
         BLACK
     }
-    public int location;
-    public Color color;
-    public int[] potentialMoves;
+
+    private int location;
+    private Color color;
+    private char pieceVisual;
     
     public Piece(char color, int coord) {
         setColor(color);
         this.coord = coord;
-        this.potentialMoves = {};
     }
 
     private void setColor(char color) {
@@ -32,5 +33,9 @@ public abstract class Piece {
             default:
                 throw EOFException; //TODO: Make a custom exception
         }
+    }
+
+    public char getPieceVisual() {
+        return pieceVisual;
     }
 }

@@ -1,16 +1,18 @@
 package xyz.saltyhermes.chess.game;
-package xyz.saltyhermes.chess.board.Board;
+
+import xyz.saltyhermes.chess.board.Board;
 
 public class Game {
     private ConditionWatcher watcher;
-    private
+    private Board board;
 
     public Game() {
         watcher = new ConditionWatcher();
+        board = new Board();
     }
 
     public start() {
-
+        
     }
 
 }

@@ -6,6 +6,12 @@ public final class Knight extends Piece {
 
     public Knight(char color, int coord) {
         super(color, coord);
+        switch (color) {
+            case WHITE: 
+                super.pieceVisual = 'N';
+                
+
+        }
     }
 
     public int[] getPotentialMoves() {

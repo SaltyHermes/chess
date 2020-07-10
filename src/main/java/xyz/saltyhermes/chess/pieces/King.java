@@ -1,5 +1,12 @@
 package xyz.saltyhermes.chess.pieces;
 
-public class King {
+public final class King extends Piece {
+    private boolean hasMoved;
     
+
+    public King(char color, int coord) {
+        super(color, coord);
+    }
+
+
 }
