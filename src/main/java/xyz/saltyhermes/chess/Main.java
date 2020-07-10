@@ -9,7 +9,7 @@ public class Main {
 
     public static void main(String[] args) {
         PieceFactory factory = new PieceFactory();
-        Piece a = factory.createPiece(W, 69, n);
+        Piece a = factory.createPiece('W', 69, 'n');
 
         System.out.println(a.getPieceVisual());
     }

@@ -1,11 +1,12 @@
 package xyz.saltyhermes.chess.board;
 
+import java.util.ArrayList;
 import java.util.List;
-import xyz.saltyhermes.chess.pieces.PieceFactory;
+import xyz.saltyhermes.chess.pieces.*;
 
 public class Board {
 
-    private List<Tile> gameBoard = new List<Tile>();
+    private List<Tile> gameBoard = new ArrayList();
     private PieceFactory factory = new PieceFactory();
 
     public Board() {
@@ -15,7 +16,8 @@ public class Board {
 
     public void createBoard() {
         for (int i = 0; i < 64; i++) {
-            gameBoard.add(new Tile());
+            Tile tile = new Tile(i);
+            gameBoard.add(tile);
         }
     }
 
@@ -24,7 +26,7 @@ public class Board {
     }
 
     public void spawnPiece(char color, int coord, char type) {
-        
+        Piece piece = factory.createPiece(color, coord, type);
         gameBoard.get(coord).spawnPiece(piece);
     }
 

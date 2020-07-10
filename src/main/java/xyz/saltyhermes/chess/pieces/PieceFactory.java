@@ -1,6 +1,6 @@
 package xyz.saltyhermes.chess.pieces;
 
-public static class PieceFactory {
+public class PieceFactory {
 
     public PieceFactory() {
 

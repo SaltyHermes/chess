@@ -11,7 +11,7 @@ public class Game {
         board = new Board();
     }
 
-    public start() {
+    public void start() {
         
     }
 

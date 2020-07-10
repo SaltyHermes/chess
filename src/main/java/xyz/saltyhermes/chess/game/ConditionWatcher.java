@@ -1,5 +1,7 @@
 package xyz.saltyhermes.chess.game;
 
+import xyz.saltyhermes.chess.board.*;
+
 public class ConditionWatcher {
 
     private boolean isCheck;
@@ -13,7 +15,7 @@ public class ConditionWatcher {
 
     }
 
-    public doWatch(Board board) {
+    public void doWatch(Board board) {
 
     }
 }

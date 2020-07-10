@@ -1,4 +1,5 @@
 package xyz.saltyhermes.chess.board;
+import xyz.saltyhermes.chess.pieces.*;
 
 public class Tile {
     private int coordinate;
@@ -13,7 +14,7 @@ public class Tile {
     }
 
     public boolean isEmpty(){
-        return !piece;
+        return piece == null;
     }
 
     public void removePiece() {

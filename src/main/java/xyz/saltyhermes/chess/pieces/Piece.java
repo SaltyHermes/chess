@@ -2,14 +2,10 @@ package xyz.saltyhermes.chess.pieces;
 
 public abstract class Piece {
 
-    private enum Color {
-        WHITE,
-        BLACK
-    }
 
-    private int location;
-    private Color color;
-    private char pieceVisual;
+    private int coord;
+    private char color;
+    public char pieceVisual;
     
     public Piece(char color, int coord) {
         setColor(color);
@@ -19,20 +15,24 @@ public abstract class Piece {
     private void setColor(char color) {
         switch(color) {
             case 'W':
-                this.color = WHITE;
+                this.color = 'w';
                 break;
             case 'w':
-                this.color = WHITE;
+                this.color = 'w';
                 break;
             case 'B':
-                this.color = BLACK;
+                this.color = 'b';
                 break;
             case 'b':
-                this.color = BLACK;
+                this.color = 'b';
                 break;
             default:
-                throw EOFException; //TODO: Make a custom exception
+                System.out.println("Berhwegfhs"); //TODO: Make a custom exception
         }
+    }
+
+    public char getColor() {
+        return color;
     }
 
     public char getPieceVisual() {

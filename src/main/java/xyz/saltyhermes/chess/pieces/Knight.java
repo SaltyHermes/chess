@@ -6,11 +6,10 @@ public final class Knight extends Piece {
 
     public Knight(char color, int coord) {
         super(color, coord);
-        switch (color) {
-            case WHITE: 
-                super.pieceVisual = 'N';
-                
-
+        if (getColor() == 'w') {
+            this.pieceVisual = 'N';
+        } else {
+            this.pieceVisual = 'n';
         }
     }
 

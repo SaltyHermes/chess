@@ -1,4 +1,6 @@
 package xyz.saltyhermes.chess.game;
+import java.util.List;
+import xyz.saltyhermes.chess.board.*;
 
 public class Mover {
 
@@ -10,7 +12,7 @@ public class Mover {
 
     public boolean isLegal(List<Tile> board, int start, int destination) {
 
-        return null;
+        return false;
     }
 
     public void doMove() {
