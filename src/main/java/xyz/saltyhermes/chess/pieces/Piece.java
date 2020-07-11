@@ -2,32 +2,28 @@ package xyz.saltyhermes.chess.pieces;
 
 public abstract class Piece {
 
-    private static char pieceType;
-    private int coord;
-    private char color;
-    public char pieceVisual;
-    
-    public Piece(char color, int coord) {
-        setColor(color);
+    protected int coord;
+    protected final char color;
+    protected char pieceVisual;
+    protected char pieceType;
+    protected int pieceValue;
+
+
+    protected Piece(char color, int coord) {
+        color = setColor(color);
+        this.color = color;
         this.coord = coord;
     }
 
-    private void setColor(char color) {
+    private char setColor(char color) {
+        color = Character.toUpperCase(color);
         switch(color) {
             case 'W':
-                this.color = 'w';
-                break;
-            case 'w':
-                this.color = 'w';
-                break;
+                return color;
             case 'B':
-                this.color = 'b';
-                break;
-            case 'b':
-                this.color = 'b';
-                break;
+                return color;
             default:
-                System.out.println("Berhwegfhs"); //TODO: Make a custom exception
+                throw new RuntimeException("Color can only be set to 'w' or 'B'");
         }
     }
 
@@ -37,5 +33,33 @@ public abstract class Piece {
 
     public char getPieceVisual() {
         return pieceVisual;
+    }
+
+    public char getPieceType() {
+        return pieceType;
+    }
+
+    public int getPieceValue() {
+        return pieceValue;
+    }
+
+    public int getCoord() {
+        return coord;
+    }
+
+    public void setCoord(int coord) {
+        this.coord = coord;
+    }
+
+    public void setPieceVisual(char pieceVisual) {
+        this.pieceVisual = pieceVisual;
+    }
+
+    public void setPieceType(char pieceType) {
+        this.pieceType = pieceType;
+    }
+
+    public void setPieceValue(int pieceValue) {
+        this.pieceValue = pieceValue;
     }
 }
