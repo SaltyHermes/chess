@@ -37,6 +37,15 @@ public class PieceFactory {
         }
     }
 
+    
+    public Piece createPiece(int coord, char type) {
+        if (Character.isUpperCase(type)) {
+            return createPiece('w', coord, type);
+        } else {
+            return createPiece('W', coord, type);
+        }
+    }
+
     public Pawn createPawn(char color, int coord) {
         return new Pawn(color, coord);
     }
