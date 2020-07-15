@@ -7,7 +7,23 @@ public final class King extends Piece {
 
     public King(char color, int coord) {
         super(color, coord);
-        
+        setPieceValue(0);
+        setPieceType('k');
+        setWhiteVisual('K');
+        setBlackVisual('k');
+        setPieceVisual();
+    }
+
+    @Override
+    public void move() {
+        // TODO Auto-generated method stub
+
+    }
+
+    @Override
+    public boolean isMoveLegal() {
+        // TODO Auto-generated method stub
+        return false;
     }
 
 

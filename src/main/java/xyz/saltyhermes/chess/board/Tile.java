@@ -21,4 +21,8 @@ public class Tile {
         this.piece = null;
     }
 
+    public Piece getPiece() {
+        return piece;
+    }
+
 }

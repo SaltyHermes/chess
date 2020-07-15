@@ -6,5 +6,20 @@ public class Rook extends Piece {
 
     public Rook(char color, int coord) {
         super(color, coord);
+        setWhiteVisual('R');
+        setBlackVisual('r');
+        setPieceVisual();
+    }
+
+    @Override
+    public void move() {
+        // TODO Auto-generated method stub
+
+    }
+
+    @Override
+    public boolean isMoveLegal() {
+        // TODO Auto-generated method stub
+        return false;
     }
 }

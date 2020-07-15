@@ -40,9 +40,9 @@ public class PieceFactory {
     
     public Piece createPiece(int coord, char type) {
         if (Character.isUpperCase(type)) {
-            return createPiece('w', coord, type);
-        } else {
             return createPiece('W', coord, type);
+        } else {
+            return createPiece('B', coord, type);
         }
     }
 

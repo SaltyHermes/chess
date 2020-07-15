@@ -32,7 +32,7 @@ public class Board {
 
     public void populateBoard() {
         char pieceType;
-        for (int i = 0; i < 63; i++) {
+        for (int i = 0; i < 64; i++) {
             pieceType = pieceLayout[i];
             spawnPiece(i, pieceType);
         }
@@ -46,6 +46,11 @@ public class Board {
     public void spawnPiece(int coord, char type) {
         Piece piece = factory.createPiece(coord, type);
         gameBoard.get(coord).spawnPiece(piece);
+    }
+
+    public Piece getPiece(int coord) {
+        Piece piece = gameBoard.get(coord).getPiece();
+        return piece;
     }
 
     public List<Tile> getGameBoard() {

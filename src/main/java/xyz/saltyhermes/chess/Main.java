@@ -1,5 +1,7 @@
 package xyz.saltyhermes.chess;
 
+import xyz.saltyhermes.chess.board.Board;
+import xyz.saltyhermes.chess.board.BoardPrinter;
 import xyz.saltyhermes.chess.pieces.Piece;
 import xyz.saltyhermes.chess.pieces.PieceFactory;
 
@@ -8,11 +10,9 @@ import xyz.saltyhermes.chess.pieces.PieceFactory;
 public class Main {
 
     public static void main(String[] args) {
-        PieceFactory factory = new PieceFactory();
-        Piece a = factory.createPiece('W', 69, 'n');
-        Piece b = factory.createPiece('b', 69, 'n');
-
-        System.out.println(a.getPieceVisual());
-        System.out.println(b.getPieceVisual());
+        Board board = new Board();
+        BoardPrinter printer = new BoardPrinter(board);
+        printer.printBlackSide();
+        printer.printWhiteSide();
     }
 }

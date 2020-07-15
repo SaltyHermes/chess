@@ -1,21 +1,29 @@
 package xyz.saltyhermes.chess.pieces;
 
+
 public abstract class Piece {
 
     protected int coord;
     protected final char color;
     protected char pieceVisual;
+    protected char whiteVisual;
+    protected char blackVisual;
     protected char pieceType;
     protected int pieceValue;
+    protected int[] potentialMoves;
 
 
     protected Piece(char color, int coord) {
-        color = setColor(color);
+        color = colorize(color);
         this.color = color;
         this.coord = coord;
     }
 
-    private char setColor(char color) {
+    public abstract void move();
+
+    public abstract boolean isMoveLegal();
+
+    private char colorize(char color) {
         color = Character.toUpperCase(color);
         switch(color) {
             case 'W':
@@ -23,7 +31,7 @@ public abstract class Piece {
             case 'B':
                 return color;
             default:
-                throw new RuntimeException("Color can only be set to 'w' or 'B'");
+                throw new RuntimeException("Color can only be set to 'W' or 'B'");
         }
     }
 
@@ -47,12 +55,31 @@ public abstract class Piece {
         return coord;
     }
 
+    public int[] getPotentialMoves() {
+        return potentialMoves;
+    }
+
     public void setCoord(int coord) {
         this.coord = coord;
     }
 
-    public void setPieceVisual(char pieceVisual) {
-        this.pieceVisual = pieceVisual;
+    protected void setPieceVisual() {
+        switch(this.color) {
+            case 'W':
+                this.pieceVisual = whiteVisual;
+                break;
+            case 'B':
+                this.pieceVisual = blackVisual;
+                break;
+        }
+    }
+
+    protected void setWhiteVisual(char whiteVisual) {
+        this.whiteVisual = whiteVisual;
+    }
+
+    protected void setBlackVisual(char blackVisual) {
+        this.blackVisual = blackVisual;
     }
 
     public void setPieceType(char pieceType) {
@@ -61,5 +88,9 @@ public abstract class Piece {
 
     public void setPieceValue(int pieceValue) {
         this.pieceValue = pieceValue;
+    }
+
+    public void setPotentialMoves(int[] potentialMoves) {
+        this.potentialMoves = potentialMoves;
     }
 }

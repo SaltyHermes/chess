@@ -1,21 +1,31 @@
 package xyz.saltyhermes.chess.game;
-import java.util.List;
 import xyz.saltyhermes.chess.board.*;
 
 public class Mover {
 
     private char ownerColor;
+    private Board board;
 
-    public Mover(char ownerColor) {
+    public Mover(Board board, char ownerColor) {
         this.ownerColor = ownerColor;
+        this.board = board;
     }
 
-    public boolean isLegal(List<Tile> board, int start, int destination) {
-
-        return false;
+    public boolean isLegal(int start, int destination) {
+        return isMoveInRange(start, destination);
     }
 
-    public void doMove() {
+    public boolean isMoveInRange(int start, int destination) {
+        int boardrange = board.getGameBoard().size() - 1;
+        if (start < 0 || start > boardrange || destination < 0 || destination > boardrange) {
+            return false;
+        } else {
+            return true;
+        }
+    }
 
+    public void doMove(int start, int destination) {
+        if (isLegal(start, destination)) {
+        }
     }
 }
