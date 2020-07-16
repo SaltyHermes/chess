@@ -1,5 +1,7 @@
 package xyz.saltyhermes.chess.pieces;
 
+import java.util.HashSet;
+
 import xyz.saltyhermes.chess.board.Board;
 
 public class Pawn extends Piece {
@@ -11,10 +13,15 @@ public class Pawn extends Piece {
         setPieceVisual();
     }
 
-
     @Override
-    public boolean isMoveLegal() {
+    public boolean isMoveLegal(int destination) {
         // TODO Auto-generated method stub
         return false;
+    }
+
+    @Override
+    public HashSet<Integer> getLegalCoords() {
+        // TODO Auto-generated method stub
+        return null;
     }
 }

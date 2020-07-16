@@ -1,6 +1,8 @@
 package xyz.saltyhermes.chess.pieces;
 import xyz.saltyhermes.chess.board.Board;
 
+import java.util.HashSet;
+
 
 public abstract class Piece {
 
@@ -11,7 +13,6 @@ public abstract class Piece {
     protected char blackVisual;
     protected char pieceType;
     protected int pieceValue;
-    protected int[] potentialMoves;
     protected Board board;
 
 
@@ -22,19 +23,28 @@ public abstract class Piece {
         this.board = board;
     }
 
-    public abstract boolean isMoveLegal();
+    public abstract boolean isMoveLegal(int destination);
 
-    private char colorize(char color) {
-        color = Character.toUpperCase(color);
-        switch(color) {
-            case 'W':
-                return color;
-            case 'B':
-                return color;
-            default:
-                throw new RuntimeException("Color can only be set to 'W' or 'B'");
+    public abstract HashSet<Integer> getLegalCoords();
+
+    public boolean isMoveOutOfRange(int destination) {
+        if (destination > board.getGameBoard().size() - 1) {
+            return true;
+        } else {
+            return false;
         }
     }
+
+    public boolean isPieceHostile(int destination) {
+        if (board.getPiece(destination).color == this.color) {
+            return false;
+        } else {
+            return true;
+        }
+        
+    }
+
+   
 
     public char getColor() {
         return color;
@@ -54,10 +64,6 @@ public abstract class Piece {
 
     public int getCoord() {
         return coord;
-    }
-
-    public int[] getPotentialMoves() {
-        return potentialMoves;
     }
 
     public void setCoord(int coord) {
@@ -91,7 +97,15 @@ public abstract class Piece {
         this.pieceValue = pieceValue;
     }
 
-    public void setPotentialMoves(int[] potentialMoves) {
-        this.potentialMoves = potentialMoves;
+    private char colorize(char color) {
+        color = Character.toUpperCase(color);
+        switch(color) {
+            case 'W':
+                return color;
+            case 'B':
+                return color;
+            default:
+                throw new RuntimeException("Color can only be set to 'W' or 'B'");
+        }
     }
 }

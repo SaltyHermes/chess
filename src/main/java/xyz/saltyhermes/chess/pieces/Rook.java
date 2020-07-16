@@ -1,10 +1,12 @@
 package xyz.saltyhermes.chess.pieces;
 
+import java.util.HashSet;
+
 import xyz.saltyhermes.chess.board.Board;
 
 public class Rook extends Piece {
-    
-    private int[] potentialMoves = {-17, -15, -10, -8, 8, 10, 15, 17};
+
+    private int[] potentialMoves = { -8, -1, 1, 8 };
 
     public Rook(char color, int coord, Board board) {
         super(color, coord, board);
@@ -13,10 +15,15 @@ public class Rook extends Piece {
         setPieceVisual();
     }
 
-
     @Override
-    public boolean isMoveLegal() {
+    public boolean isMoveLegal(int destination) {
         // TODO Auto-generated method stub
         return false;
+    }
+
+    @Override
+    public HashSet<Integer> getLegalCoords() {
+        // TODO Auto-generated method stub
+        return null;
     }
 }

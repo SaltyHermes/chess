@@ -26,6 +26,7 @@ public class Mover {
 
     public void doMove(int start, int destination) {
         if (isLegal(start, destination)) {
+            
         }
     }
 }
