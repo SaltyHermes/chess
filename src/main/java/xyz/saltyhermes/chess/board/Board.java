@@ -39,12 +39,12 @@ public class Board {
     }
 
     public void spawnPiece(char color, int coord, char type) {
-        Piece piece = factory.createPiece(color, coord, type);
+        Piece piece = factory.createPiece(color, coord, type, this);
         gameBoard.get(coord).spawnPiece(piece);
     }
 
     public void spawnPiece(int coord, char type) {
-        Piece piece = factory.createPiece(coord, type);
+        Piece piece = factory.createPiece(coord, type, this);
         gameBoard.get(coord).spawnPiece(piece);
     }
 

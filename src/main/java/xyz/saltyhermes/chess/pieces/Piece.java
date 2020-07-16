@@ -1,4 +1,5 @@
 package xyz.saltyhermes.chess.pieces;
+import xyz.saltyhermes.chess.board.Board;
 
 
 public abstract class Piece {
@@ -11,15 +12,15 @@ public abstract class Piece {
     protected char pieceType;
     protected int pieceValue;
     protected int[] potentialMoves;
+    protected Board board;
 
 
-    protected Piece(char color, int coord) {
+    protected Piece(char color, int coord, Board board) {
         color = colorize(color);
         this.color = color;
         this.coord = coord;
+        this.board = board;
     }
-
-    public abstract void move();
 
     public abstract boolean isMoveLegal();
 

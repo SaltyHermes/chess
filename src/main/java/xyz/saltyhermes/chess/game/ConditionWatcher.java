@@ -18,8 +18,6 @@ public class ConditionWatcher {
         isMate = false;
         isStale = false;
         enPassant = false;
-        
-
     }
 
     public void doWatch(Board board) {

@@ -1,19 +1,15 @@
 package xyz.saltyhermes.chess.pieces;
 
+import xyz.saltyhermes.chess.board.Board;
+
 public final class Bishop extends Piece {
-    private int[] potentialMoves = {-63, -3};
+    private int[] potentialMoves = {-9};
 
-    public Bishop(char color, int coord) {
-        super(color, coord);
-        setWhiteVisual('B');
-        setBlackVisual('b');
+    public Bishop(char color, int coord, Board board) {
+        super(color, coord, board);
+        setWhiteVisual('♗');
+        setBlackVisual('♝');
         setPieceVisual();
-    }
-
-    @Override
-    public void move() {
-        // TODO Auto-generated method stub
-
     }
 
     @Override

@@ -18,9 +18,9 @@ public class BoardPrinter {
                 count = 0;
             }
             if (tile.isEmpty()) {
-                System.out.print(".");
+                System.out.print(". ");
             } else {
-                System.out.print(tile.getPiece().getPieceVisual());
+                System.out.print(tile.getPiece().getPieceVisual() + " ");
             }
             count++;
         }
@@ -31,9 +31,9 @@ public class BoardPrinter {
         for (int i = 56; i > -1; i -= 8) {
             for (int j = 0; j < 8; j++) {
                 if (board.getTile(i+j).isEmpty()) {
-                    System.out.print(".");
+                    System.out.print(". ");
                 } else {
-                    System.out.print(board.getPiece(j+i).getPieceVisual());
+                    System.out.print(board.getPiece(j+i).getPieceVisual() + " ");
                 }
             }
             System.out.println();

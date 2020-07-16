@@ -1,19 +1,16 @@
 package xyz.saltyhermes.chess.pieces;
 
+import xyz.saltyhermes.chess.board.Board;
+
 public class Pawn extends Piece {
 
-    public Pawn(char color, int coord) {
-        super(color, coord);
-        setWhiteVisual('P');
-        setBlackVisual('p');
+    public Pawn(char color, int coord, Board board) {
+        super(color, coord, board);
+        setWhiteVisual('♙');
+        setBlackVisual('♟');
         setPieceVisual();
     }
 
-    @Override
-    public void move() {
-        // TODO Auto-generated method stub
-
-    }
 
     @Override
     public boolean isMoveLegal() {
