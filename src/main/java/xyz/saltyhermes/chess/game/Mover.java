@@ -1,5 +1,6 @@
 package xyz.saltyhermes.chess.game;
 import xyz.saltyhermes.chess.board.*;
+import xyz.saltyhermes.chess.pieces.Piece;
 
 public class Mover {
 
@@ -11,22 +12,15 @@ public class Mover {
         this.board = board;
     }
 
-    public boolean isLegal(int start, int destination) {
-        return isMoveInRange(start, destination);
-    }
-
-    public boolean isMoveInRange(int start, int destination) {
-        int boardrange = board.getGameBoard().size() - 1;
-        if (start < 0 || start > boardrange || destination < 0 || destination > boardrange) {
-            return false;
-        } else {
-            return true;
-        }
-    }
+    
 
     public void doMove(int start, int destination) {
-        if (isLegal(start, destination)) {
-            
+        if (board.getPiece(start).getLegalCoords().contains(destination)) {
+            Piece piece = board.getPiece(start);
+            board.getTile(destination).spawnPiece(piece);
+            board.getTile(destination).updatePieceCoord();
+            board.getTile(start).removePiece();
+
         }
     }
 }

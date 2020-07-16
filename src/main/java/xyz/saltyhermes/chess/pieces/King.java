@@ -19,7 +19,7 @@ public final class King extends Piece {
 
     @Override
     public boolean isMoveLegal(int destination) {
-        if (!isPieceHostile(destination)) {
+        if (isPieceFriendly(destination)) {
             return false;
         } else {
             return true;

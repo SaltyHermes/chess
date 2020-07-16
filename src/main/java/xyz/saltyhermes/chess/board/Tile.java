@@ -13,6 +13,10 @@ public class Tile {
         this.piece = piece;
     }
 
+    public void updatePieceCoord() {
+        piece.setCoord(coordinate);
+    }
+
     public boolean isEmpty(){
         return piece == null;
     }

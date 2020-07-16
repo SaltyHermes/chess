@@ -27,21 +27,28 @@ public abstract class Piece {
 
     public abstract HashSet<Integer> getLegalCoords();
 
+    
+    
+
     public boolean isMoveOutOfRange(int destination) {
-        if (destination > board.getGameBoard().size() - 1) {
+        if (destination > board.getGameBoard().size() - 1 || destination < 0) {
             return true;
         } else {
             return false;
         }
     }
 
-    public boolean isPieceHostile(int destination) {
-        if (board.getPiece(destination).color == this.color) {
-            return false;
+    public boolean isPieceFriendly(int destination) {
+        if (board.getPiece(destination) != null) {
+            if (board.getPiece(destination).getColor() == this.color) {
+                return true;
+            } else {
+                return false;
+            }
         } else {
-            return true;
+            return false;
         }
-        
+            
     }
 
    

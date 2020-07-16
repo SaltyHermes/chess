@@ -17,12 +17,14 @@ public final class Knight extends Piece {
         setPieceVisual();
     }
 
+
+
     @Override
     public boolean isMoveLegal(int destination) {
         if (isMoveOutOfRange(destination)) {
             return false;
         } else {
-            if (!isPieceHostile(destination)) {
+            if (isPieceFriendly(destination)) {
                 return false;
             } else { 
                 return true;
@@ -35,7 +37,7 @@ public final class Knight extends Piece {
         HashSet<Integer> legalCoords = new HashSet<Integer>();
         for (int i : potentialMoves) {
             if (isMoveLegal(getCoord() + i)) {
-                legalCoords.add(getCoord() + 1);
+                legalCoords.add(getCoord() + i);
             }
         }
         return legalCoords;
