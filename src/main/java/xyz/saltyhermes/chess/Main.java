@@ -15,13 +15,14 @@ public class Main {
         BoardPrinter printer = new BoardPrinter(board);
         BoardUtils utils = new BoardUtils(board);
         Mover move = new Mover(board, 'w');
-        move.doMove(1, 18);
+    
+        move.doMove(3, 59);
         printer.printWhiteSide();
-        move.doMove(2, 16);
+        move.doMove(59, 58);
         printer.printWhiteSide();
-        move.doMove(16, 61);
+        move.doMove(58, 23);
         printer.printWhiteSide();
-        move.doMove(16, 52);
+        move.doMove(7, 15);
         printer.printWhiteSide();
 
     }

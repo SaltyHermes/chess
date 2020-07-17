@@ -10,15 +10,28 @@ public class Queen extends Piece {
 
     public Queen(char color, int coord, Board board) {
         super(color, coord, board);
+        setPieceValue(8);
         setWhiteVisual('♕');
         setBlackVisual('♛');
         setPieceVisual();
     }
-    
+
 
     @Override
     public HashSet<Integer> getLegalCoords() {
-        // TODO Auto-generated method stub
-        return null;
+        HashSet<Integer> legalCoords = new HashSet<Integer>();
+        int simulatedCoord;
+        for (int i : potentialMoves) {
+            simulatedCoord = coord;
+            boolean stop = false;
+            while (isMovePseudolegal(simulatedCoord + i) && !stop) {
+                simulatedCoord += i;
+                legalCoords.add(simulatedCoord);
+                if (isPieceHostile(simulatedCoord)) {
+                    stop = true;
+                }
+            }
+        }
+        return legalCoords;
     }
 }

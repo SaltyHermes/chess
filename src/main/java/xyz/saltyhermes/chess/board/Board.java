@@ -17,6 +17,7 @@ public class Board implements Cloneable {
 
     private List<Tile> gameBoard = new ArrayList();
     private PieceFactory factory = new PieceFactory();
+    private BoardUtils utils = new BoardUtils(this);
 
     public Board() {
         createBoard();

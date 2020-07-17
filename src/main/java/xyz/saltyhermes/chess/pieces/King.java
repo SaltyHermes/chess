@@ -20,9 +20,16 @@ public final class King extends Piece {
 
     @Override
     public HashSet<Integer> getLegalCoords() {
-        // TODO Auto-generated method stub
-        return null;
+        HashSet<Integer> legalCoords = new HashSet<Integer>();
+        for (int i : potentialMoves) {
+            if (isMovePseudolegal(getCoord() + i)) {
+                legalCoords.add(getCoord() + i);
+            }
+        }
+        return legalCoords;
     }
+
+    
 
 
 }

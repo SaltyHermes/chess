@@ -6,17 +6,43 @@ import xyz.saltyhermes.chess.board.Board;
 
 public class Pawn extends Piece {
 
+    private int[] potentialAttacks = {7, 9};
+
+
+    private boolean leftOriginalRank = false;
+
     public Pawn(char color, int coord, Board board) {
         super(color, coord, board);
+        setPieceValue(1);
+        setPieceType('p');
         setWhiteVisual('♙');
         setBlackVisual('♟');
         setPieceVisual();
     }
 
+    public boolean isInOriginalRank() {
+
+        //TODO: Finish writing this method you dumbfuck
+        if (leftOriginalRank == true){
+            return false;
+        } else {
+            return false; //FINISH IT HERE
+        }
+
+    }
+
 
     @Override
     public HashSet<Integer> getLegalCoords() {
-        // TODO Auto-generated method stub
-        return null;
+        HashSet<Integer> legalCoords = new HashSet<Integer>();
+        for(int i : potentialAttacks) {
+            if (isPieceHostile(coord + i)) {
+                legalCoords.add(coord + i);
+            }
+        }
+        if (board.getTile(coord + 8).isEmpty()) {
+            legalCoords.add(coord + 8);
+        }
+        return legalCoords;
     }
 }
