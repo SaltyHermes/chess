@@ -1,19 +1,29 @@
 package xyz.saltyhermes.chess.board;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.ListIterator;
+
 import xyz.saltyhermes.chess.pieces.*;
 
 public class Board implements Cloneable {
     
-    private static final char[] pieceLayout = { 'R', 'N', 'B', 'Q', 'K', 'B', 'N', 'R',
-                                                ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ',
-                                                ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ',
-                                                ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ',
-                                                ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ',
-                                                ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ',
-                                                ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ',
-                                                'r', 'n', 'b', 'q', 'k', 'b', 'n', 'r'};
+    private static final Character[] pieceLayout = { 'R', 'N', 'B', 'Q', 'K', 'B', 'N', 'R',
+                                                    ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ',
+                                                    ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ',
+                                                    ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ',
+                                                    ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ',
+                                                    ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ',
+                                                    ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ',
+                                                    'r', 'n', 'b', 'q', 'k', 'b', 'n', 'r'};
+
+    private List<Character> layoutList = Arrays.asList(pieceLayout);
+    private ListIterator<Character> layoutIterator = layoutList.listIterator();
+        
+    
 
     private List<Tile> gameBoard = new ArrayList();
     private PieceFactory factory = new PieceFactory();
@@ -25,7 +35,7 @@ public class Board implements Cloneable {
     }
 
     public void createBoard() {
-        for (int i = 0; i < 64; i++) {
+        for (int i = 0; i < 119; i++) {
             Tile tile = new Tile(i);
             gameBoard.add(tile);
         }
@@ -33,9 +43,11 @@ public class Board implements Cloneable {
 
     public void populateBoard() {
         char pieceType;
-        for (int i = 0; i < 64; i++) {
-            pieceType = pieceLayout[i];
-            spawnPiece(i, pieceType);
+        for (int i = 0; i < 120; i++) {
+            if (!utils.isTileRestricted(i)) {
+                pieceType = layoutIterator.next();
+                spawnPiece(i, pieceType);
+            }
         }
     }
 
