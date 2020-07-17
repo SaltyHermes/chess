@@ -14,20 +14,21 @@ public final class Bishop extends Piece {
         setPieceVisual();
     }
 
-    public boolean isMoveLegal(int destination) {
-        // TODO: finish this plz
-
-        if (isMoveOutOfRange(destination)) {
-            return false;
-        } else {
-            return false;
-        }
-
-    }
 
     @Override
     public HashSet<Integer> getLegalCoords() {
-        // TODO Auto-generated method stub
-        return null;
+        HashSet<Integer> legalCoords = new HashSet<Integer>();
+        int simulatedCoord;
+        for (int i : potentialMoves) {
+            simulatedCoord = coord;
+            while (isMovePseudolegal(simulatedCoord + i)) {
+                simulatedCoord += i;
+                legalCoords.add(simulatedCoord);
+                if (!isPieceFriendly(simulatedCoord)) {
+                    break;
+                }
+            }
+        }
+        return legalCoords;
     }
 }

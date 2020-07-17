@@ -15,11 +15,6 @@ public class Rook extends Piece {
         setPieceVisual();
     }
 
-    @Override
-    public boolean isMoveLegal(int destination) {
-        // TODO Auto-generated method stub
-        return false;
-    }
 
     @Override
     public HashSet<Integer> getLegalCoords() {

@@ -9,7 +9,7 @@ public class Tile {
         this.coordinate = coordinate;
     }
 
-    public void spawnPiece(Piece piece) {
+    public void putPiece(Piece piece) {
         this.piece = piece;
     }
 

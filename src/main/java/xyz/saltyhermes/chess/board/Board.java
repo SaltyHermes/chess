@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import xyz.saltyhermes.chess.pieces.*;
 
-public class Board {
+public class Board implements Cloneable {
     
     private static final char[] pieceLayout = { 'R', 'N', 'B', 'Q', 'K', 'B', 'N', 'R',
                                                 'P', 'P', 'P', 'P', 'P', 'P', 'P', 'P',
@@ -40,12 +40,12 @@ public class Board {
 
     public void spawnPiece(char color, int coord, char type) {
         Piece piece = factory.createPiece(color, coord, type, this);
-        gameBoard.get(coord).spawnPiece(piece);
+        gameBoard.get(coord).putPiece(piece);
     }
 
     public void spawnPiece(int coord, char type) {
         Piece piece = factory.createPiece(coord, type, this);
-        gameBoard.get(coord).spawnPiece(piece);
+        gameBoard.get(coord).putPiece(piece);
     }
 
     public Piece getPiece(int coord) {

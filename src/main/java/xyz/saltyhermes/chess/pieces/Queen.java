@@ -14,12 +14,7 @@ public class Queen extends Piece {
         setBlackVisual('♛');
         setPieceVisual();
     }
-
-    @Override
-    public boolean isMoveLegal(int destination) {
-        // TODO Auto-generated method stub
-        return false;
-    }
+    
 
     @Override
     public HashSet<Integer> getLegalCoords() {

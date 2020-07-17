@@ -17,14 +17,6 @@ public final class King extends Piece {
         setPieceVisual();
     }
 
-    @Override
-    public boolean isMoveLegal(int destination) {
-        if (isPieceFriendly(destination)) {
-            return false;
-        } else {
-            return true;
-        }
-    }
 
     @Override
     public HashSet<Integer> getLegalCoords() {

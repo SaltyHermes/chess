@@ -17,11 +17,8 @@ public class Main {
         Mover move = new Mover(board, 'w');
         move.doMove(1, 18);
         printer.printWhiteSide();
-        move.doMove(18, 35);
+        move.doMove(2, 16);
         printer.printWhiteSide();
-        move.doMove(35, 52);
-        printer.printWhiteSide();
-        move.doMove(52, 62);
-        printer.printWhiteSide();
+
     }
 }

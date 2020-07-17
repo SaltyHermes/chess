@@ -23,13 +23,21 @@ public abstract class Piece {
         this.board = board;
     }
 
-    public abstract boolean isMoveLegal(int destination);
+    public boolean isMovePseudolegal(int destination) {
+        if (isMoveOutOfRange(destination)) {
+            return false;
+        } else {
+            if (isPieceFriendly(destination)) {
+                return false;
+            } else { 
+                return true;
+            }
+        }
+    }
 
     public abstract HashSet<Integer> getLegalCoords();
 
     
-    
-
     public boolean isMoveOutOfRange(int destination) {
         if (destination > board.getGameBoard().size() - 1 || destination < 0) {
             return true;
@@ -51,7 +59,6 @@ public abstract class Piece {
             
     }
 
-   
 
     public char getColor() {
         return color;
@@ -96,11 +103,11 @@ public abstract class Piece {
         this.blackVisual = blackVisual;
     }
 
-    public void setPieceType(char pieceType) {
+    protected void setPieceType(char pieceType) {
         this.pieceType = pieceType;
     }
 
-    public void setPieceValue(int pieceValue) {
+    protected void setPieceValue(int pieceValue) {
         this.pieceValue = pieceValue;
     }
 

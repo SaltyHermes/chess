@@ -19,24 +19,12 @@ public final class Knight extends Piece {
 
 
 
-    @Override
-    public boolean isMoveLegal(int destination) {
-        if (isMoveOutOfRange(destination)) {
-            return false;
-        } else {
-            if (isPieceFriendly(destination)) {
-                return false;
-            } else { 
-                return true;
-            }
-        }
-    }
 
     @Override
     public HashSet<Integer> getLegalCoords() {
         HashSet<Integer> legalCoords = new HashSet<Integer>();
         for (int i : potentialMoves) {
-            if (isMoveLegal(getCoord() + i)) {
+            if (isMovePseudolegal(getCoord() + i)) {
                 legalCoords.add(getCoord() + i);
             }
         }
