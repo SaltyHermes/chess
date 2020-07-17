@@ -21,11 +21,12 @@ public final class Bishop extends Piece {
         int simulatedCoord;
         for (int i : potentialMoves) {
             simulatedCoord = coord;
-            while (isMovePseudolegal(simulatedCoord + i)) {
+            boolean stop = false;
+            while (isMovePseudolegal(simulatedCoord + i) && !stop) {
                 simulatedCoord += i;
                 legalCoords.add(simulatedCoord);
-                if (!isPieceFriendly(simulatedCoord)) {
-                    break;
+                if (isPieceHostile(simulatedCoord)) {
+                    stop = true;
                 }
             }
         }

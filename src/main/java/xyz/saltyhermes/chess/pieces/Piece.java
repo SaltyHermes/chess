@@ -59,6 +59,19 @@ public abstract class Piece {
             
     }
 
+    public boolean isPieceHostile(int destination) {
+        if (board.getPiece(destination) != null) {
+            if (board.getPiece(destination).getColor() != this.color) {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+            
+    }
+
 
     public char getColor() {
         return color;

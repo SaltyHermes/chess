@@ -19,6 +19,10 @@ public class Main {
         printer.printWhiteSide();
         move.doMove(2, 16);
         printer.printWhiteSide();
+        move.doMove(16, 61);
+        printer.printWhiteSide();
+        move.doMove(16, 52);
+        printer.printWhiteSide();
 
     }
 }

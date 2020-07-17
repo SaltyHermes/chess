@@ -7,12 +7,12 @@ import xyz.saltyhermes.chess.pieces.*;
 public class Board implements Cloneable {
     
     private static final char[] pieceLayout = { 'R', 'N', 'B', 'Q', 'K', 'B', 'N', 'R',
-                                                'P', 'P', 'P', 'P', 'P', 'P', 'P', 'P',
                                                 ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ',
                                                 ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ',
                                                 ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ',
                                                 ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ',
-                                                'p', 'p', 'p', 'p', 'p', 'p', 'p', 'p',
+                                                ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ',
+                                                ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ',
                                                 'r', 'n', 'b', 'q', 'k', 'b', 'n', 'r'};
 
     private List<Tile> gameBoard = new ArrayList();
