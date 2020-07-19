@@ -1,5 +1,6 @@
 package xyz.saltyhermes.chess.pieces;
 import xyz.saltyhermes.chess.board.Board;
+import xyz.saltyhermes.chess.board.BoardUtils;
 
 import java.util.HashSet;
 
@@ -14,6 +15,7 @@ public abstract class Piece {
     protected char pieceType;
     protected int pieceValue;
     protected Board board;
+    private BoardUtils utils;
 
 
     protected Piece(char color, int coord, Board board) {
@@ -21,6 +23,7 @@ public abstract class Piece {
         this.color = color;
         this.coord = coord;
         this.board = board;
+        this.utils = board.getUtils();
     }
 
     public boolean isMovePseudolegal(int destination) {
@@ -39,7 +42,8 @@ public abstract class Piece {
 
     
     public boolean isMoveOutOfRange(int destination) {
-        if (destination > board.getGameBoard().size() - 1 || destination < 0) {
+        if (destination > board.getGameBoard().size() - 1 || 
+            destination < 0 || utils.isTileRestricted(destination)) {
             return true;
         } else {
             return false;

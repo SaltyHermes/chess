@@ -29,4 +29,8 @@ public class Tile {
         return piece;
     }
 
+    public int getCoordinate() {
+        return coordinate;
+    }
+
 }

@@ -15,8 +15,7 @@ public class Main {
         BoardPrinter printer = new BoardPrinter(board);
         BoardUtils utils = new BoardUtils(board);
         Mover move = new Mover(board, 'w');
-    
-        
-        System.out.println(board.getPiece(3).getLegalCoords().toString());
+        printer.printBlackSide();
+        System.out.println(board.getPiece(24).getLegalCoords().toString());
     }
 }

@@ -36,7 +36,6 @@ public class Board implements Cloneable {
 
     public void createBoard() {
         for (int i = 0; i < 119; i++) {
-            
             Tile tile = new Tile(i);
             gameBoard.add(tile);
         }
@@ -73,6 +72,10 @@ public class Board implements Cloneable {
 
     public Tile getTile(int id) {
         return gameBoard.get(id);
+    }
+
+    public BoardUtils getUtils() {
+        return utils;
     }
 
 }
