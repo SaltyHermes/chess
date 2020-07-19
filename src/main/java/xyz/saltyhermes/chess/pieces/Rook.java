@@ -6,7 +6,7 @@ import xyz.saltyhermes.chess.board.Board;
 
 public class Rook extends Piece {
 
-    private int[] potentialMoves = { -8, -1, 1, 8 };
+    private int[] potentialMoves = {-10, -1, 1, 10};
 
     public Rook(char color, int coord, Board board) {
         super(color, coord, board);

@@ -6,7 +6,7 @@ import xyz.saltyhermes.chess.board.Board;
 
 public final class Knight extends Piece {
 
-    private int[] potentialMoves = { -17, -15, -10, -8, 8, 10, 15, 17 };
+    private int[] potentialMoves = { -21, -19, -12, -8, 8, 12, 19, 21 }; //TODO: verify if it's ok
 
     public Knight(char color, int coord, Board board) {
         super(color, coord, board);

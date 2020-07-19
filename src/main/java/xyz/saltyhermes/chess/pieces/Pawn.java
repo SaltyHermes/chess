@@ -6,7 +6,7 @@ import xyz.saltyhermes.chess.board.Board;
 
 public class Pawn extends Piece {
 
-    private int[] potentialAttacks = {7, 9};
+    private int[] potentialAttacks = {9, 11};
 
 
     private boolean leftOriginalRank = false;
@@ -40,8 +40,8 @@ public class Pawn extends Piece {
                 legalCoords.add(coord + i);
             }
         }
-        if (board.getTile(coord + 8).isEmpty()) {
-            legalCoords.add(coord + 8);
+        if (board.getTile(coord + 10).isEmpty()) {
+            legalCoords.add(coord + 10);
         }
         return legalCoords;
     }

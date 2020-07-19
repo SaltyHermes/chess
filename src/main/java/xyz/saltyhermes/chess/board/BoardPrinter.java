@@ -4,6 +4,8 @@ import java.util.List;
 import xyz.saltyhermes.chess.board.*;
 
 public class BoardPrinter {
+    //TODO: completely rewrite all print methods
+    
     private Board board;
 
     public BoardPrinter(Board board) {

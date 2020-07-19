@@ -5,7 +5,7 @@ import java.util.HashSet;
 import xyz.saltyhermes.chess.board.Board;
 
 public final class Bishop extends Piece {
-    private int[] potentialMoves = { -9, -7, 7, 9 };
+    private int[] potentialMoves = {-11, -9, 9, 11};
 
     public Bishop(char color, int coord, Board board) {
         super(color, coord, board);

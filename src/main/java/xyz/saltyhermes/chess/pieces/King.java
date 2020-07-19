@@ -6,7 +6,7 @@ import xyz.saltyhermes.chess.board.Board;
 
 public final class King extends Piece {
     private boolean hasMoved;
-    private int[] potentialMoves = { -9, -8, -7, -1, 1, 7, 8, 9 };
+    private int[] potentialMoves = {-11, -10, -9, -1, 1, 9, 10, 11};
 
     public King(char color, int coord, Board board) {
         super(color, coord, board);
