@@ -25,10 +25,10 @@ public class BoardUtils {
     private static Integer eightRank[] =    {91, 92, 93, 94, 95, 96, 97, 98};
 
     
-    private HashSet<Integer> attackedByWhite;
-    private HashSet<Integer> attackedByBlack;
-    private ArrayList<Piece> whitePieces;
-    private ArrayList<Piece> blackPieces;
+    private HashSet<Integer> attackedByWhite = new HashSet<Integer>();
+    private HashSet<Integer> attackedByBlack = new HashSet<Integer>();
+    private ArrayList<Piece> whitePieces = new ArrayList<Piece>();
+    private ArrayList<Piece> blackPieces = new ArrayList<Piece>();
 
     public BoardUtils(Board board) {
         this.board = board;
@@ -63,14 +63,14 @@ public class BoardUtils {
         attackedByBlack.clear();
         for (Piece piece : whitePieces) {
             if (piece.getPieceType() == 'p') {
-                piece.getAttackedCoords();
+                attackedByWhite.addAll(piece.getAttackedCoords());
             } else {
                 attackedByWhite.addAll(piece.getLegalCoords());
             }
         }
         for (Piece piece : blackPieces) {
             if (piece.getPieceType() == 'p') {
-                piece.getAttackedCoords();
+                attackedByBlack.addAll(piece.getAttackedCoords());
             } else {
                 attackedByBlack.addAll(piece.getLegalCoords());
             }
@@ -97,5 +97,12 @@ public class BoardUtils {
         return eightRank;
     }
 
+    public HashSet<Integer> getAttackedByWhite() {
+        return attackedByWhite;
+    }
+
+    public HashSet<Integer> getAttackedByBlack() {
+        return attackedByBlack;
+    }
 
 }

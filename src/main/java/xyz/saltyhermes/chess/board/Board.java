@@ -33,7 +33,7 @@ public class Board implements Cloneable {
     }
 
     public void createBoard() {
-        for (int i = 0; i < 119; i++) {
+        for (int i = 0; i < 120; i++) {
             Tile tile = new Tile(i);
             gameBoard.add(tile);
         }
