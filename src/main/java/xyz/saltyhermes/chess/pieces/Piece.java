@@ -15,7 +15,7 @@ public abstract class Piece {
     protected char pieceType;
     protected int pieceValue;
     protected Board board;
-    private BoardUtils utils;
+    protected BoardUtils utils;
 
 
     protected Piece(char color, int coord, Board board) {
