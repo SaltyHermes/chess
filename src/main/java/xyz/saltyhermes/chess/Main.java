@@ -16,6 +16,14 @@ public class Main {
         BoardUtils utils = new BoardUtils(board);
         Mover move = new Mover(board, 'w');
         printer.printBlackSide();
-        System.out.println(board.getPiece(24).getLegalCoords().toString());
+        System.out.println(board.getPiece(31).getLegalCoords().toString());
+        move.doMove(31, 41);
+        printer.printBlackSide();
+        System.out.println(board.getPiece(41).getLegalCoords().toString());
+        move.doMove(82, 62);
+        move.doMove(62, 52);
+        System.out.println(board.getPiece(82).getLegalCoords().toString());
+        printer.printBlackSide();
+
     }
 }
