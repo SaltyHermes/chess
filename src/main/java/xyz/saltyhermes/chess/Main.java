@@ -22,7 +22,16 @@ public class Main {
         System.out.println(board.getPiece(41).getLegalCoords().toString());
         move.doMove(82, 62);
         move.doMove(62, 52);
-        System.out.println(board.getPiece(82).getLegalCoords().toString());
+        System.out.println(board.getPiece(52).getLegalCoords().toString());
+        printer.printBlackSide();
+        move.doMove(52, 41);
+        printer.printBlackSide();
+        System.out.println(board.getPiece(41).getLegalCoords().toString());
+        System.out.println(board.getPiece(21).getLegalCoords().toString());
+        move.doMove(21, 41);
+        printer.printBlackSide();
+        System.out.println(board.getPiece(41).getLegalCoords().toString());
+        move.doMove(41, 81);
         printer.printBlackSide();
 
     }

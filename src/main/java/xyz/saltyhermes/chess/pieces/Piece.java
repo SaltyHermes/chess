@@ -76,6 +76,10 @@ public abstract class Piece {
             
     }
 
+    public HashSet getAttackedCoords() {
+        return new HashSet<Integer>();
+    }
+
 
     public char getColor() {
         return color;
@@ -139,4 +143,5 @@ public abstract class Piece {
                 throw new RuntimeException("Color can only be set to 'W' or 'B'");
         }
     }
+
 }
